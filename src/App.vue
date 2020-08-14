@@ -1,32 +1,35 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+<template lang="pug">
+  .app
+    AppHeader
+    router-view
 </template>
 
+<script>
+import AppHeader from '@/components/layout/AppHeader.vue'
+export default {
+  name: 'App',
+  components: {
+    AppHeader
+  }
+}
+</script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url('https://use.fontawesome.com/releases/v5.14.0/css/all.css');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+a {
+  text-decoration: none;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 25rem);
+  column-gap: 1rem;
+  justify-content: center;
+  padding-bottom: 1rem;
 }
 </style>
