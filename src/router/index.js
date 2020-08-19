@@ -1,31 +1,48 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
+    props: true
   },
   {
-    path: '/geometry',
-    name: 'Geometry',
+    path: "/subject-units/:theSubjectSlug",
+    name: "TheSubjectUnits",
+    props: true,
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Geometry.vue')
+      import(
+        /* webpackChunkName: "The Subject Units"*/ "../views/TheSubjectUnits"
+      )
   },
   {
-    path: '/algrebra-2',
-    name: 'Algebra 2',
+    path: "/unit-lessons/:theSubjectSlug/:theUnitSlug",
+    name: "TheUnitLessons",
+    props: true,
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/AlgebraTwo.vue')
+      import(
+        /* webpackChunkName: "The Unit Lessons"*/ "../views/TheUnitLessons"
+      )
+  },
+  {
+    path: "/lesson-details/:theSubjectSlug/:theUnitSlug/:theLessonSlug",
+    name: "TheLessonDetails",
+    props: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "The Lesson Details"*/ "../views/TheLessonDetails"
+      )
   }
-]
+];
 
 const router = new VueRouter({
+  // mode: "history",
   routes
-})
+});
 
-export default router
+export default router;

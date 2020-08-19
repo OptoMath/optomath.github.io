@@ -12,27 +12,27 @@ export default {
           lessons: [
             {
               name: "Basic Geometry Terms",
-              slug: "basic geometry terms",
+              slug: "basic-geometry-terms",
               icon: "fas fa-shapes"
             },
             {
               name: "Basics of Angles",
-              slug: "basics of angles",
+              slug: "basics-of-angles",
               icon: "fas fa-grip-lines-vertical"
             },
             {
               name: "Angle Addition",
-              slug: "angle addition",
+              slug: "angle-addition",
               icon: "fas fa-clone"
             },
             {
               name: "Segment Addition",
-              slug: "segment addition",
+              slug: "segment-addition",
               icon: "fas fa-braille"
             },
             {
               name: "Vertical Angles",
-              slug: "vertical angles",
+              slug: "vertical-angles",
               icon: "fas fa-dot-circle"
             },
             {
@@ -52,7 +52,7 @@ export default {
             },
             {
               name: "Triangles (Interior & Exterior Angles)",
-              slug: "triangles (interior & exterior angles)",
+              slug: "triangles-interior-exterior-angles)",
               icon: "fas fa-drafting-compass"
             }
           ]

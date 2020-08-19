@@ -1,18 +1,34 @@
 <template lang="pug">
-  router-link(:to="'/' + slug")
-    button(class="center")
-      i(:class="icon")
-      p {{name.toLocaleUpperCase() }}
+  //- router-link(:to="'/' + slug")
+  button
+    slot(name="icon")
+    slot(name="name")
+    //- i(:class="icon")
+    //- p {{name.toLocaleUpperCase() }}
 </template>
 
 <script>
 export default {
   name: "AppButton",
-  props: ["icon", "name", "slug"]
+  props: ["icon", "name"],
+  data() {
+    return {
+      // theRouterName: this.routerName
+    };
+  }
 };
 </script>
 
 <style lang="scss" scoped>
+.button {
+  display: flex;
+  align-items: center;
+  padding: 0px 1rem;
+  gap: 1rem;
+  width: 200px;
+  height: 50px;
+}
+
 button {
   // need more work in with
   width: 25rem;
@@ -23,7 +39,6 @@ button {
   padding: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   margin-top: 30px;
   margin-right: 1rem;
   // flex: 1 1 20rem;
@@ -37,6 +52,7 @@ button {
   transition: box-shadow 0.1s ease-in, top 0.1s;
   i {
     flex: 2;
+    justify-self: flex-end;
     font-size: 3rem;
     color: #1bffb8;
     border-radius: 50px;
@@ -48,8 +64,9 @@ button {
   }
   p {
     flex: 10;
+    justify-content: flex-start;
     color: #1bffb8;
-    font-size: 1rem;
+    font-size: 2rem;
   }
 }
 button:hover {
@@ -58,5 +75,6 @@ button:hover {
   box-shadow: none;
   border-color: transparent;
   top: 2px;
+  border: solid 1px rgba(141, 141, 141, 0.2);
 }
 </style>
