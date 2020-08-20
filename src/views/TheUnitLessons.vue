@@ -36,8 +36,9 @@ export default {
       // return store.subjects.find(subjec => subjec.slug === this.theSubjectSlug)
       //   .units;
 
-      return store.subjects.find((subject) => subject.slug === this.theSubjectSlug)
-        .units.find((unit) => unit.slug === this.theUnitSlug).lessons;
+      return store.subjects
+        .find(subject => subject.slug === this.theSubjectSlug)
+        .units.find(unit => unit.slug === this.theUnitSlug).lessons;
     }
   }
 };

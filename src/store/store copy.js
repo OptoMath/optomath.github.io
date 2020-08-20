@@ -1,7 +1,7 @@
 export default {
   subjects: [
     {
-      name: "GEOMETRY",
+      name: "Geometry",
       slug: "geometry",
       icon: "fas fa-shapes",
       units: [
@@ -13,8 +13,7 @@ export default {
             {
               name: "Basic Geometry Terms",
               slug: "basic-geometry-terms",
-              icon: "fas fa-shapes",
-              video: "https://www.youtube.com/embed/cfstCIj43QE"
+              icon: "fas fa-shapes"
             },
             {
               name: "Basics of Angles",
@@ -597,7 +596,7 @@ export default {
       ]
     },
     {
-      name: "ALGEBRA 2",
+      name: "Algebra 2",
       slug: "algebra-two",
       icon: "fas fa-superscript",
       units: [

@@ -1,10 +1,12 @@
 <template lang="pug">
-div
+.the-lesson-details
   //- h2 The subject slug is {{theSubjectSlug}}
   //- h2 The unit Slug is {{theUnitSlug}}
-  h1 {{lesson.name}}
-  h2 {{lesson.slug}}
-  i(:class="lesson.icon")
+  div
+    h1 {{lesson.name}}
+    iframe(width="400" height="250" :src="lesson.video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+    
+
 </template>
 
 <script>
@@ -14,7 +16,7 @@ import store from "@/store/store.js";
 import AppButton from "@/components/ui/AppButton.vue";
 
 export default {
-  name: "TheUnitLessons",
+  name: "TheLessonDetails",
   components: {
     AppButton
   },
@@ -46,4 +48,18 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.the-lesson-details {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+iframe {
+  // background: rgb(0,255,120);
+margin: 0;
+border: solid 4px;
+border-image: linear-gradient(90deg, rgba(0,255,120,1) 0%, rgba(0,149,255,1) 100%) 30;
+}
+
+</style>

@@ -31,7 +31,7 @@ export default {
 
 button {
   // need more work in with
-  width: 25rem;
+  width: 20rem;
   height: auto;
   // min-width: 20rem;
   // need more work in with
@@ -66,7 +66,7 @@ button {
     flex: 10;
     justify-content: flex-start;
     color: #1bffb8;
-    font-size: 2rem;
+    font-size: calc(1rem * 1vh );
   }
 }
 button:hover {
