@@ -1,11 +1,15 @@
 <template lang="pug">
 .the-lesson-details
-  //- h2 The subject slug is {{theSubjectSlug}}
-  //- h2 The unit Slug is {{theUnitSlug}}
-  div
-    h1 {{lesson.name}}
-    iframe(width="400" height="250" :src="lesson.video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
-    
+  .button-group
+    AppTitle
+      i(slot="icon" class="fas fa-undo")
+      p(slot="name") {{lesson.name}}
+  .frame-container
+    iframe(width="300" height="200" :src="lesson.video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+  .button-group
+    AppTitle
+      i(slot="icon" class="fas fa-link")
+      p(slot="name") {{lesson.name}}
 
 </template>
 
@@ -14,11 +18,14 @@
 
 import store from "@/store/store.js";
 import AppButton from "@/components/ui/AppButton.vue";
+import AppTitle from "@/components/ui/AppTitle.vue";
+
 
 export default {
   name: "TheLessonDetails",
   components: {
-    AppButton
+    AppButton,
+    AppTitle
   },
   props: {
     theSubjectSlug: {
@@ -40,26 +47,32 @@ export default {
       //   .units;
 
       return store.subjects
-        .find((subject) => subject.slug === this.theSubjectSlug)
-        .units.find((unit) => unit.slug === this.theUnitSlug)
-        .lessons.find((lesson) => lesson.slug === this.theLessonSlug);
+        .find(subject => subject.slug === this.theSubjectSlug)
+        .units.find(unit => unit.slug === this.theUnitSlug)
+        .lessons.find(lesson => lesson.slug === this.theLessonSlug);
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.the-lesson-details {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
 
-iframe {
+  .frame-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+    iframe {
   // background: rgb(0,255,120);
-margin: 0;
-border: solid 4px;
-border-image: linear-gradient(90deg, rgba(0,255,120,1) 0%, rgba(0,149,255,1) 100%) 30;
+  border: solid 4px;
+  border-image: linear-gradient(
+      90deg,
+      rgba(0, 255, 120, 1) 0%,
+      rgba(0, 149, 255, 1) 100%
+    )
+    30;
 }
+  }
+  
 
 </style>

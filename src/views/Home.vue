@@ -1,7 +1,7 @@
 <template lang="pug">
   .home
     img(src="../assets/images/avatar.svg")
-    .button-group
+    .button-group 
       div( v-for="subject in subjects" :key="subject.name")
         router-link(:to="{name: 'TheSubjectUnits', params: {theSubjectSlug: subject.slug}}")
           //- AppButton(:name="subject.name" :icon="subject.icon")

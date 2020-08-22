@@ -1,13 +1,15 @@
 <template lang="pug">
-div
-  //- h2 The subject slug is {{theSubjectSlug}}
-  //- h2 The unit Slug is {{theUnitSlug}}
+.the-unit-lessons
   .button-group
-      div( v-for="lesson in lessons" :key="lesson.name")
-        router-link(:to="{name: 'TheLessonDetails', params: {theSubjectSlug: theSubjectSlug, theUnitSlug: theUnitSlug, theLessonSlug: lesson.slug}}")
-          AppButton
-            i(slot="icon" :class="lesson.icon")
-            p(slot="name") {{lesson.name}}
+    AppTitle
+      i(slot="icon" class="fas fa-undo")
+      p(slot="name") {{unitName}}
+  .button-group
+    div( v-for="lesson in lessons" :key="lesson.name")
+      router-link(:to="{name: 'TheLessonDetails', params: {theSubjectSlug: theSubjectSlug, theUnitSlug: theUnitSlug, theLessonSlug: lesson.slug}}")
+        AppButton(class="small-button")
+          i(slot="icon" :class="lesson.icon")
+          p(slot="name") {{lesson.name}}
 </template>
 
 <script>
@@ -15,11 +17,13 @@ div
 
 import store from "@/store/store.js";
 import AppButton from "@/components/ui/AppButton.vue";
+import AppTitle from "@/components/ui/AppTitle.vue";
 
 export default {
   name: "TheUnitLessons",
   components: {
-    AppButton
+    AppButton,
+    AppTitle
   },
   props: {
     theSubjectSlug: {
@@ -32,10 +36,14 @@ export default {
     }
   },
   computed: {
+    unitName() {
+     return store.subjects
+        .find(subject => subject.slug === this.theSubjectSlug)
+        .units.find(unit => unit.slug === this.theUnitSlug).name;
+    },
     lessons() {
       // return store.subjects.find(subjec => subjec.slug === this.theSubjectSlug)
       //   .units;
-
       return store.subjects
         .find(subject => subject.slug === this.theSubjectSlug)
         .units.find(unit => unit.slug === this.theUnitSlug).lessons;

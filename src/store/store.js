@@ -424,7 +424,7 @@ export default {
           ]
         },
         {
-          name: "RIGHT TRIANGLES/TRIGONOMETRY",
+          name: "RIGHT TRIANGLES / TRIGONOMETRY",
           slug: "right-triangles-and-trigonometry",
           icon: "fas fa-ruler-combined",
           lessons: [
