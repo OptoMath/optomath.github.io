@@ -76,7 +76,7 @@ export default {
   align-items: center;
   row-gap: 1rem;
 
-  width: 12rem;
+  width: 18rem;
   height: 12rem;
   padding: 20px 10px;
   background-color: white;
