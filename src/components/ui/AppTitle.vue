@@ -18,7 +18,7 @@ export default {
   column-gap: 1rem;
 
   width: 18rem;
-  height: 6rem;
+  height: 8rem;
   padding: 1rem 1rem;
   background-color: white;
   position: relative;
