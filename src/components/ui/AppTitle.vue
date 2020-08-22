@@ -17,7 +17,7 @@ export default {
   align-items: center;
   column-gap: 1rem;
 
-  width: 19rem;
+  width: 18rem;
   height: 6rem;
   padding: 1rem 1rem;
   background-color: white;
