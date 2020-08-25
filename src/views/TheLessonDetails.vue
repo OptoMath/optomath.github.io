@@ -6,10 +6,10 @@
       p(slot="name") {{lesson.name}}
   .frame-container
     iframe(width="300" height="200" :src="lesson.video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
-  .button-group
-    AppTitle
+  .button-group(class="large-button")
+    AppTitle(class="large-button")
       i(slot="icon" class="fas fa-link")
-      p(slot="name") {{lesson.name}}
+      p(slot="name") link 1
 
 </template>
 
