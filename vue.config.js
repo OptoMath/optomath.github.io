@@ -21,13 +21,13 @@ module.exports = {
         "src": "img/icons/android-chrome-maskable-192x192.png",
         "sizes": "192x192",
         "type": "img/png",
-        "purpose": "any maskable"
+        "purpose": "maskable"
       },
       {
         "src": "img/icons/android-chrome-maskable-512x512.png",
         "sizes": "512x512",
         "type": "img/png",
-        "purpose": "any maskable"
+        "purpose": "maskable"
       }
     ]
     }
