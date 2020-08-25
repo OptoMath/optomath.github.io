@@ -5,7 +5,6 @@ module.exports = {
       name: 'Opto Math',
       themeColor: '#4DBA87',
       msTileColor: '#000000',
-      background_color: '#0028B8',
       appleMobileWebAppCapable: 'yes',
       appleMobileWebAppStatusBarStyle: 'black',
       iconPaths: [{
@@ -30,6 +29,9 @@ module.exports = {
         "type": "img/png",
         "purpose": "maskable"
       }
-    ]
+    ],
+    manifestOptions: {
+      background_color: "#0028B8"
+    }
     }
 };
