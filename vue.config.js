@@ -4,7 +4,8 @@ module.exports = {
     pwa: {
       name: 'Opto Math',
       themeColor: '#4DBA87',
-      msTileColor: '#0028B8',
+      msTileColor: '#000000',
+      background_color: '#0028B8',
       appleMobileWebAppCapable: 'yes',
       appleMobileWebAppStatusBarStyle: 'black',
       iconPaths: [{
