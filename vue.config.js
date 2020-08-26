@@ -3,7 +3,7 @@ module.exports = {
     process.env.NODE_ENV === "production" ? "/optomath.github.io/" : "/",
     pwa: {
       name: 'Opto Math',
-      themeColor: '#0028B8',
+      themeColor: '#0000FC',
       msTileColor: '#000000',
       appleMobileWebAppCapable: 'yes',
       appleMobileWebAppStatusBarStyle: 'black',
@@ -31,7 +31,7 @@ module.exports = {
       }
     ],
     manifestOptions: {
-      background_color: "#0028B8"
+      background_color: "#0000FC"
     }
     }
 };
