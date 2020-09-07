@@ -1,18 +1,19 @@
 <template lang="pug">
-  .home
+  v-app
     img(src="../assets/images/avatar.svg")
-    .button-group 
-      div( v-for="subject in subjects" :key="subject.name")
-        router-link(:to="{name: 'TheSubjectUnits', params: {theSubjectSlug: subject.slug}}")
-          //- AppButton(:name="subject.name" :icon="subject.icon")
-          AppButton
-            i(slot="icon" :class="subject.icon")
-            p(slot="name") {{subject.name}}
+    v-container
+      v-row
+        v-col(v-for="subject in subjects" :key="subject.name" cols="12")
+          v-row(align="start" justify="center") 
+            router-link(:to="{name: 'TheSubjectUnits', params: {theSubjectSlug: subject.slug}}")
+              AppButton(class="large-button")
+                  i(slot="icon" :class="subject.icon")
+                  p(slot="name") {{subject.name}}
 </template>
 
 <script>
 // @ is an alias to /src
-import AppButton from "@/components/ui/AppButton.vue";
+import AppButton from "@/components/ui/AppButton";
 import store from "@/store/store.js";
 export default {
   name: "Home",

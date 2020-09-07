@@ -1,14 +1,18 @@
 <template lang="pug">
-  #app-title
-    slot(name="icon")
-    slot(name="name")
+  #app-title(@click="goBack")
+      slot(name="icon")
+      slot(name="name")
 
 </template>
 
 <script>
 export default {
-
-}
+  methods: {
+    goBack() {
+      return this.$router.go(-1);
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -17,7 +21,7 @@ export default {
   align-items: center;
   column-gap: 1rem;
 
-  width: 18rem;
+  width: 19rem;
   height: 8rem;
   padding: 1rem 1rem;
   background-color: white;
@@ -41,7 +45,7 @@ export default {
     padding: 20px;
     margin-left: 5px;
     margin-right: 5px;
-    
+
     box-shadow: inset 0px 1px 1px 1px rgba(141, 141, 141, 0.1);
   }
 

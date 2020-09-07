@@ -1,17 +1,23 @@
 <template lang="pug">
 .the-subject-units
-  .button-group
-    AppTitle
-      i(slot="icon" class="fas fa-undo")
-      p(slot="name") {{subject.name}}
+  v-container
+    v-row 
+      v-col
+        v-row(align="start" justify="center") 
+          AppTitle
+            i(slot="icon" class="fas fa-undo")
+            p(slot="name") {{subject.name}}
 
-  .button-group
-    div( v-for="unit in units" :key="unit.name")
-      router-link(:to="{name: 'TheUnitLessons', params: {theSubjectSlug: theSubjectSlug, theUnitSlug: unit.slug }}")
-        //- AppButton(:name="subject.name" :icon="subject.icon")
-        AppButton(class="small-button")
-          i(slot="icon" :class="unit.icon")
-          p(slot="name") {{unit.name}}
+  v-container
+    v-row 
+      v-col
+        v-row(align="start" justify="center") 
+          div( v-for="unit in units" :key="unit.name" class="pa-2")
+            router-link(:to="{name: 'TheUnitLessons', params: {theSubjectSlug: theSubjectSlug, theUnitSlug: unit.slug }}")
+              //- AppButton(:name="subject.name" :icon="subject.icon")
+              AppButton(class="small-button")
+                i(slot="icon" :class="unit.icon")
+                p(slot="name") {{unit.name}}
 </template>
 
 <script>

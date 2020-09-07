@@ -1,15 +1,21 @@
 <template lang="pug">
 .the-unit-lessons
-  .button-group
-    AppTitle
-      i(slot="icon" class="fas fa-undo")
-      p(slot="name") {{unitName}}
-  .button-group
-    div( v-for="lesson in lessons" :key="lesson.name")
-      router-link(:to="{name: 'TheLessonDetails', params: {theSubjectSlug: theSubjectSlug, theUnitSlug: theUnitSlug, theLessonSlug: lesson.slug}}")
-        AppButton(class="small-button")
-          i(slot="icon" :class="lesson.icon")
-          p(slot="name") {{lesson.name}}
+  v-container
+    v-row
+      v-col(cols="12" class="justify-center" )
+         v-row(align="start" justify="center")
+          AppTitle
+            i(slot="icon" class="fas fa-undo")
+            p(slot="name") {{unitName}}
+  v-container
+    v-row
+      v-col
+         v-row(align="start" justify="center" )
+          div( v-for="lesson in lessons" :key="lesson.name" class="pa-2")
+            router-link(:to="{name: 'TheLessonDetails', params: {theSubjectSlug: theSubjectSlug, theUnitSlug: theUnitSlug, theLessonSlug: lesson.slug}}")
+              AppButton(class="small-button")
+                i(slot="icon" :class="lesson.icon")
+                p(slot="name") {{lesson.name}}
 </template>
 
 <script>
@@ -37,7 +43,7 @@ export default {
   },
   computed: {
     unitName() {
-     return store.subjects
+      return store.subjects
         .find(subject => subject.slug === this.theSubjectSlug)
         .units.find(unit => unit.slug === this.theUnitSlug).name;
     },

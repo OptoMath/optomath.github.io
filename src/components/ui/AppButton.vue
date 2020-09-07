@@ -1,10 +1,7 @@
 <template lang="pug">
-  //- router-link(:to="'/' + slug")
   button(class="large-button")
     slot(name="icon")
     slot(name="name")
-    //- i(:class="icon")
-    //- p {{name.toLocaleUpperCase() }}
 </template>
 
 <script>
@@ -14,11 +11,11 @@ export default {
   data() {
     return {
       // theRouterName: this.routerName
-      data (){
+      data() {
         return {
-          small: 'small-button',
-          large: 'large-button'
-        }
+          small: "small-button",
+          large: "large-button"
+        };
       }
     };
   }
@@ -29,7 +26,6 @@ export default {
 @font-face {
   font-family: Montebello;
   src: url("../../assets/fonts/Montebello-Rounded.woff");
-  // C:\Users\vasga\Documents\OPTO\OptoDev\OptoMath\opto-math\src
 }
 
 .large-button {
@@ -64,7 +60,7 @@ export default {
   p {
     flex: 10;
     font-size: 1.2rem;
-    text-align: left;
+    text-align: center;
     font-family: Montebello;
     letter-spacing: 2px;
   }
