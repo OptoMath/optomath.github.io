@@ -28,6 +28,6 @@ a:active {
   text-decoration: none !important;
 }
 .theme--light.v-application {
-  background: none;
+  background: none !important;
 }
 </style>
